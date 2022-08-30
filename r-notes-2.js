@@ -11,3 +11,15 @@ Description: Project 2, Github finder app. Helps us practice implementing 3rd pa
 //****************************** */
 //   environment variables
 //****************************** */
+// add .env file to root of project
+//include variables with format of: REACT_APP_VARIABLE_NAME
+REACT_APP_GITHUB_TOKEN = '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'
+// call anywhere in project via:
+process.env.REACT_APP_GITHUB_TOKEN
+
+//****************************** */
+//   reducers
+//****************************** */
+// functions that we can use to manipulate our state
+// use instead of useState hook when you have a lot of state to scale application
+// contextapi with useState hook and reducers is usually good enough to manage state, however if you have extremely large application with a lot of state then you can use Redux, which uses Reducers
