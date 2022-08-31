@@ -21,5 +21,6 @@ process.env.REACT_APP_GITHUB_TOKEN
 //   reducers
 //****************************** */
 // functions that we can use to manipulate our state
-// use instead of useState hook when you have a lot of state to scale application
+// use instead of useState hook when you have more state to scale application
 // contextapi with useState hook and reducers is usually good enough to manage state, however if you have extremely large application with a lot of state then you can use Redux, which uses Reducers
+// https://www.robinwieruch.de/javascript-reducer/ has great documentation on reducers
