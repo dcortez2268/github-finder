@@ -10,6 +10,7 @@ export const GithubProvider = ({ children }) => {
     const initialState = {
         users: [],
         user: {},
+        repos: [],
         loading: false,
     }
     const [state, dispatch] = useReducer(GithubReducer, initialState)
@@ -49,6 +50,27 @@ export const GithubProvider = ({ children }) => {
         }
     }
 
+    // Get user repos
+    const getUserRepos = async (login) => {
+        setLoading()
+
+        // searches for last 10 created public repositories
+        const params = new URLSearchParams({
+            sort: 'created',
+            per_page: 10,
+        })
+
+        const response = await fetch(
+            `http://api.github.com/users/${login}/repos?${params}`
+        )
+        const data = await response.json()
+
+        dispatch({
+            type: 'GET_REPOS',
+            payload: data,
+        })
+    }
+
     //clears users from state
     const clearSearch = () => dispatch({ type: 'DELETE_USERS' })
 
@@ -60,9 +82,11 @@ export const GithubProvider = ({ children }) => {
                 users: state.users,
                 loading: state.loading,
                 user: state.user,
+                repos: state.repos,
                 searchUsers,
                 clearSearch,
                 getUser,
+                getUserRepos,
             }}
         >
             {children}
