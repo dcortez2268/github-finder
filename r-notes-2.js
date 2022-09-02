@@ -24,3 +24,9 @@ process.env.REACT_APP_GITHUB_TOKEN
 // use instead of useState hook when you have more state to scale application
 // contextapi with useState hook and reducers is usually good enough to manage state, however if you have extremely large application with a lot of state then you can use Redux, which uses Reducers
 // https://www.robinwieruch.de/javascript-reducer/ has great documentation on reducers
+
+//****************************** */
+//  refactoring with reducers, context
+//****************************** */
+// moved functions from context to action file, and only passing state and dispatch from context provider.
+// calling functions from action file via component, and dispatching via component as well
