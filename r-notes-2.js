@@ -29,4 +29,9 @@ process.env.REACT_APP_GITHUB_TOKEN
 //  refactoring with reducers, context
 //****************************** */
 // moved functions from context to action file, and only passing state and dispatch from context provider.
-// calling functions from action file via component, and dispatching via component as well
+// calling functions from action file via component, and dispatching via component as well, significantly cleaned up context file
+
+//****************************** */
+//  deployed to vercel
+//****************************** */
+// vercel is another great hosting option

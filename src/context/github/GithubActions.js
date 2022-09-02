@@ -2,7 +2,9 @@
 export const searchUsers = async (text) => {
     const params = new URLSearchParams({ q: text })
 
-    const response = await fetch(`http://api.github.com/search/users?${params}`)
+    const response = await fetch(
+        `https://api.github.com/search/users?${params}`
+    )
     const { items } = await response.json()
 
     return items
@@ -10,7 +12,7 @@ export const searchUsers = async (text) => {
 
 // Get single user
 export const getUser = async (login) => {
-    const response = await fetch(`http://api.github.com/users/${login}`)
+    const response = await fetch(`https://api.github.com/users/${login}`)
 
     if (response.status === '404') {
         window.location = '/notfound'
