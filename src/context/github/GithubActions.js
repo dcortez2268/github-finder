@@ -31,7 +31,7 @@ export const getUserRepos = async (login) => {
     })
 
     const response = await fetch(
-        `http://api.github.com/users/${login}/repos?${params}`
+        `https://api.github.com/users/${login}/repos?${params}`
     )
     const data = await response.json()
     return data
